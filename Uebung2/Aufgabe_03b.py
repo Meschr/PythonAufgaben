@@ -13,7 +13,7 @@ headerContent = [name, ort, land]
 headerLine = "|".join(headerContent)
 
 x = True
-eintrag = []
+table = [headerLine]
 
 while x is True:
     name, ort, land = input("Enter name,city and country: ").split()
@@ -24,12 +24,12 @@ while x is True:
 
     rowContent = [name, ort, land]
     row = "|".join(rowContent)
-
+    table.append(row)
     abfrage = input("Enter 'y' or 'Y' for another entry: ")
     if 'y' in abfrage:
         x = True
     else:
         x = False
 
-print(headerLine)
-print(row)
+for entry in table:
+    print(entry)
