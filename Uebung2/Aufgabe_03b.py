@@ -1,38 +1,35 @@
-tabelle = ['_____Name','Ort','Land_____']
-header = "_____|_____".join(tabelle)
-tabelle.append(header)
-tabelle.remove('_____Name')
-tabelle.remove('Ort')
-tabelle.remove('Land_____')
+columnWidth = 25
 
+name = "Name"
+name = name.center(columnWidth, '_')
+
+ort = "Ort"
+ort = ort.center(columnWidth, '_')
+
+land = "Land"
+land = land.center(columnWidth, '_')
+
+headerContent = [name, ort, land]
+headerLine = "|".join(headerContent)
 
 x = True
 eintrag = []
 
 while x is True:
     name, ort, land = input("Enter name,city and country: ").split()
-    eintrag = [name,ort,land]
-    eintrag = "\t".join(eintrag)
 
-    tabelle.append(eintrag)
+    name = name.ljust(columnWidth)
+    ort = ort.ljust(columnWidth)
+    land = land.ljust(columnWidth)
+
+    rowContent = [name, ort, land]
+    row = "|".join(rowContent)
 
     abfrage = input("Enter 'y' or 'Y' for another entry: ")
-    if abfrage == 'y' or 'Y':
+    if 'y' in abfrage:
+        x = True
+    else:
         x = False
-for entry in tabelle:
-    entry.expandtabs(10)
-    print(entry+'\n')
 
-
-print("test")
-
-# i = 1
-# for i in range(len(tabelle)):
-#
-#     if (i % 3) == 0:
-#         print(entry)
-#         print('\n')
-#         i += 1
-#     else:
-#         print(entry)
-#         i += 1
+print(headerLine)
+print(row)
