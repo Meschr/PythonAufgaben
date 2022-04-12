@@ -23,6 +23,9 @@ for entry in tabelle:
     entry.expandtabs(10)
     print(entry+'\n')
 
+
+print("test")
+
 # i = 1
 # for i in range(len(tabelle)):
 #
