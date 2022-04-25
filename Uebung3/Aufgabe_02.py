@@ -1,13 +1,21 @@
 import random
 
+def getDictionaryEntry(argument):
+
+    # dictionary um Zahlen codiert darzustellen
+    dictionary = {0: " ", 1: ".", 2: ",", 3: "!"}
+
+    # '?' ist default Wert wenn nicht in dictionary vorhanden
+    return dictionary.get(argument,"?")
+
+
+
 # Funktion um Liste codiert auszugeben
 def displayListe2D(liste):
     for i in liste:
         for entry in i:
-            print(dictionary[entry])
-            
-# dictionary um Zahlen codiert darzustellen
-dictionary = {0: " ", 1: ".", 2: ",", 3: "!"}
+            print(getDictionaryEntry(entry))
+
 
 # Hauptliste
 liste = []
@@ -17,8 +25,8 @@ liste1,liste2 = [],[]
 # Abfrage wieviele Einträge in einer der Listen sein soll
 eingabe = int(input("Who many numbers do you want in the array?"))
 for i in range(eingabe):
-    liste1.append(random.randint(0,3))
-    liste2.append(random.randint(0,3))
+    liste1.append(random.randint(0,4))
+    liste2.append(random.randint(0,5))
 
 liste.append(liste1)
 liste.append(liste2)
