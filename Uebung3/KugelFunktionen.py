@@ -20,5 +20,3 @@ def oberfläche(radius = 1, winkel = 90):
     a = schnittRadius(radius, winkel)
     return math.pi*(2*radius*h + pow(a, 2))
 
-print(oberfläche(1, 180))
-print(teilVolumen())
