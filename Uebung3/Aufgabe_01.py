@@ -1,4 +1,5 @@
 import KugelFunktionen
+
 # Aufruf der Kugelfunktionen ohne Parameter verwendet die vordefinierten Werte
 print("Äquatorfläche Einheitskugel:", KugelFunktionen.schnittFlaeche(),"m²")
 print("Gesamtvolumen Einheitskugel:", KugelFunktionen.teilVolumen(),"m³")
