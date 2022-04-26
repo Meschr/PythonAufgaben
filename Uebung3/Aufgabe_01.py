@@ -10,4 +10,6 @@ while(winkel >= 0):
     KugelFunktionen.schnittFlaeche(radius, winkel), "m²")
     print("Teilvolumen bei ", winkel,"°:",
     KugelFunktionen.teilVolumen(radius, winkel), "m³")
+    print("Teilsegmentoberfläche bei:",winkel,"°",
+          KugelFunktionen.oberfläche(radius,winkel),"m²")
     winkel = int(input("Bitte Winkel in ganzen Grad eingeben: "))
