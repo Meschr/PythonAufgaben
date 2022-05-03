@@ -2,10 +2,10 @@ import numpy as np
 
 
 def create(rows, *cols):
-    if (rows <= 0 & len(cols)>=0):
+    if (rows <= 0 & len(cols) >= 0):
         matrice = np.random.randint(0, 2, size=(int(cols), int(cols)))
 
-    elif (len(cols)<= 0 & rows >= 0):
+    elif (len(cols) <= 0 & rows >= 0):
         matrice = np.random.randint(0, 2, size=(rows, rows))
 
     elif (rows <= 0 & len(cols) <= 0):
@@ -28,10 +28,10 @@ def neighborCount(binaryMatrix, rowPosition, colPosition):
         return neighborCnt;
 
     (rows, cols) = binaryMatrix.shape
-    for i in range(rowPosition-2, rowPosition+1, 1):
-        for j in range(colPosition-2, colPosition+1, 1):
-            if i != rowPosition-1 or j != colPosition-1:
-                neighborCnt += binaryMatrix[i%rows][j%cols]
+    for i in range(rowPosition - 2, rowPosition + 1, 1):
+        for j in range(colPosition - 2, colPosition + 1, 1):
+            if i != rowPosition - 1 or j != colPosition - 1:
+                neighborCnt += binaryMatrix[i % rows][j % cols]
 
     return neighborCnt
 
@@ -43,7 +43,7 @@ def getNeighbors(binaryMatrix):
 
     for i in range(0, rows, 1):
         for j in range(0, cols, 1):
-            neighborMatrix[i][j] = neighborCount(binaryMatrix,i+1,j+1)
+            neighborMatrix[i][j] = neighborCount(binaryMatrix, i + 1, j + 1)
 
     return neighborMatrix
 
@@ -61,17 +61,17 @@ def display(matrix):
 
 
 def nextGeneration(universe, neighbor):
-    nextGenUniverese = np.zeros(universe.shape, dtype=int)
+    nextGenUniverse = np.zeros(universe.shape, dtype=int)
     rows, cols = universe.shape
 
     for i in range(0, rows, 1):
         for j in range(0, cols, 1):
             if neighbor[i][j] == 3 and universe[i][j] == 0:
-                nextGenUniverese[i][j] = 1
+                nextGenUniverse[i][j] = 1
             elif neighbor[i][j] < 2 and universe[i][j] == 1:
-                nextGenUniverese[i][j] = 0
+                nextGenUniverse[i][j] = 0
             elif neighbor[i][j] == 2 or 3 and universe[i][j] == 1:
-                nextGenUniverese[i][j] = 1
+                nextGenUniverse[i][j] = 1
             elif neighbor[i][j] > 3 and universe[i][j] == 1:
-                nextGenUniverese[i][j] = 0
-    return nextGenUniverese
+                nextGenUniverse[i][j] = 0
+    return nextGenUniverse
