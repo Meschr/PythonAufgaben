@@ -15,8 +15,4 @@ class Complex:
         return
 
     def add(complexNumber1, complexNumber2):
-        resultingComplexNumber = Complex()
-        resultingComplexNumber.real = complexNumber1.real + complexNumber2.real
-        resultingComplexNumber.imag = complexNumber1.imag + complexNumber2.imag
-
-        return resultingComplexNumber
+        return Complex(complexNumber1.real+complexNumber2.real, complexNumber1.imag+complexNumber2.imag, 'i')
