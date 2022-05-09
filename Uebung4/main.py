@@ -1,11 +1,9 @@
-from Aufgabe_01abc import Complex
+import Aufgabe_01 as C
 
-c1 = Complex(-0.5,-0.3445)
-c2 = Complex(2,4,'j')
-c3 = Complex()
-c4= Complex(0,0,'a')
+c1 = C.Complex(int(input("Enter real part of number")), int(input("Enter imaginary part of number")))
+c2 = C.Complex(int(input("Enter real part of number")), int(input("Enter imaginary part of number")))
 
 c1.disp()
 c2.disp()
+c3 = C.add(c1,c2)
 c3.disp()
-c4.disp()
