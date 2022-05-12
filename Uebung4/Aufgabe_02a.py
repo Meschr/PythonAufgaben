@@ -1,6 +1,6 @@
 class Complex:
-    #todo zusatzaufgabe 2a
-    def __init__(self, realPart = 0, imagPart=0, imagChar = 'i'):
+    # todo zusatzaufgabe 2a
+    def __init__(self, realPart=0, imagPart=0, imagChar='i'):
         self.real = realPart
         self.imag = imagPart
         if imagChar == 'i' or imagChar == 'j':
@@ -10,4 +10,17 @@ class Complex:
             self.imagChar = 'i'
 
     def __str__(self):
-        return "{0:f}{1:+f}{2}".format(self.real,self.imag,self.imagChar)
+        return "{0:f}{1:+f}{2}".format(self.real, self.imag, self.imagChar)
+
+    def __add__(self, other):
+        return Complex(self.real+other.real, self.imag+other.imag, 'i')
+
+    def __sub__(self, other):
+        return Complex(self.real - other.real, self.imag - other.imag, 'i')
+
+    def __truediv__(self, other):
+        return Complex(self.real / other.real, self.imag / other.imag, 'i')
+
+    def __mul__(self, other):
+        return Complex(self.real * other.real, self.imag * other.imag, 'i')
+
