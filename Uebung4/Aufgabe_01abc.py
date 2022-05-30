@@ -9,8 +9,8 @@ class Complex:
             print("Unsupported complex Character! Changed it to default.")
             self.imagChar = 'i'
 
-    def disp(self):
-        complexString = "{0:f}{1:+f}{2}".format(self.real,self.imag,self.imagChar)
+    def disp(self, precision = 2):      # precision to define the number of digits
+        complexString = f"{0:5.{precision}f}{1:+5.{precision}f}".format(self.real,self.imag,self.imagChar) + self.imagChar
         print(complexString)
         return
 

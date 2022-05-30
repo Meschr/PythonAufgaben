@@ -1,5 +1,15 @@
 class Complex:
-    # todo zusatzaufgabe 2a
+    # todo zusatzaufgabe
+
+    '''
+            if str(imagPart).isalpha():
+            if str(imagPart) == 'i' or str(imagPart) == 'j':
+                imagChar = imagPart
+            else:
+                print("Unsupported complex Character! Changed it to default.")
+                self.imagChar = 'i'
+    '''
+
     def __init__(self, realPart=0, imagPart=0, imagChar='i'):
         self.real = realPart
         self.imag = imagPart
