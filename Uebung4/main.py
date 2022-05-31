@@ -1,6 +1,8 @@
 import Aufgabe_01abc as Cold
 import Aufgabe_02a as Cnew
 
+#main.py just for testing purposes
+
 c1 = Cold.Complex(int(input("Enter real part of number")), int(input("Enter imaginary part of number")))
 c2 = Cold.Complex(int(input("Enter real part of number")), int(input("Enter imaginary part of number")))
 
