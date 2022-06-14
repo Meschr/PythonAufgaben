@@ -1,7 +1,6 @@
 from MainWindow import MainWindow
 
-
-main = MainWindow(name= "ProProgramm1")
+main = MainWindow(name="ProProgramm1")
 input("Press any Key!")
 main.close()
 
