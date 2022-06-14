@@ -1,7 +1,7 @@
 import pygame  # to use pygame keyboard and mouse control
 from pygame.locals import *  # to use constants from pygame directly
 from OpenGL.GL import *  # to use features from OpenGL
-import threading
+import random
 
 
 class MainWindow:  # Class and constructor for main Window
@@ -18,17 +18,18 @@ class MainWindow:  # Class and constructor for main Window
         pygame.quit()  # quit pygame to close window
 
     def changeBackgroundColor(self):
-        threading.Timer(1.0, changeBackgroundColor).start()
-
         R = random.random()
         G = random.random()
         B = random.random()
         alpha = 1
         glClearColor(R, G, B, alpha)  # define background color and alpha of window
         glClear(GL_COLOR_BUFFER_BIT)  # clear OpenGL-Buffer and set background color
+        pygame.display.flip()
 
     def mainloop(self):
-        changeBackgroundColor()
+        timer_event = pygame.USEREVENT +1
+        pygame.time.set_timer(timer_event,1000)
+
         running = True
         while running:
             # Überprüfen, ob Nutzer eine Aktion durchgeführt hat
@@ -39,3 +40,5 @@ class MainWindow:  # Class and constructor for main Window
                     pygame.quit()
                 elif event.type == pygame.MOUSEMOTION:
                     print("x:"+str(event.pos[0])+" y:"+str(event.pos[1]))
+                elif event.type == timer_event:
+                        self.changeBackgroundColor()
