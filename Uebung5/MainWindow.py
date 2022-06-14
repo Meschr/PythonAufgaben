@@ -15,3 +15,11 @@ class MainWindow:  # Class and constructor for main Window
 
     def close(self):
         pygame.quit()  # quit pygame to close window
+
+    def mainloop(self):
+        while True:
+            # Überprüfen, ob Nutzer eine Aktion durchgeführt hat
+            for event in pygame.event.get():
+                # Beenden bei [ESC] oder [X]
+                if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+                    pygame.quit()
