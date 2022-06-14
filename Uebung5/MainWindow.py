@@ -17,9 +17,13 @@ class MainWindow:  # Class and constructor for main Window
         pygame.quit()  # quit pygame to close window
 
     def mainloop(self):
-        while True:
+        running = True
+        while running:
             # Überprüfen, ob Nutzer eine Aktion durchgeführt hat
             for event in pygame.event.get():
                 # Beenden bei [ESC] oder [X]
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+                    running = False
                     pygame.quit()
+                elif event.type == pygame.MOUSEMOTION:
+                    print("x:"+str(event.pos[0])+" y:"+str(event.pos[1]))
